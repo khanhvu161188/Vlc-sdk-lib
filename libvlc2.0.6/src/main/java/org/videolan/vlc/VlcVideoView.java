@@ -266,14 +266,12 @@ public class VlcVideoView extends TextureView implements MediaPlayerControl, Tex
     @Override
     public void onVideoSizeChanged(int width, int height, int visibleWidth, int visibleHeight, int sarNum, int sarDen) {
         LogUtils.i(tag, "onVideoSizeChanged   video=" + width + "x" + width + " visible="
-                + visibleWidth + "x" + visibleHeight + "   sarNum=" + sarNum + "x"
-                + sarDen);
+                + visibleWidth + "x" + visibleHeight + "   sarNum=" + sarNum + "x"+ sarDen);
         if (width * height == 0) return;
         this.mVideoWidth = visibleWidth;
         this.mVideoHeight = visibleHeight;
         post(new Runnable() {
-            @Override
-            public void run() {
+            @Override public void run() {
                 adjustAspectRatio(mVideoWidth, mVideoHeight, rotation);
             }
         });

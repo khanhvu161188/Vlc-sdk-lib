@@ -421,15 +421,15 @@ public class VlcPlayer implements MediaPlayerControl, Handler.Callback, IVLCVout
 
                 break;
             case MediaPlayer.Event.TimeChanged://TimeChanged   15501
-                // LogUtils.i(tag, "TimeChanged" + event.getTimeChanged());
+                 LogUtils.i(tag, "TimeChanged" + event.getTimeChanged());
 //                if (isABLoop && isAttached && canSeek && abTimeEnd > 0) {
 //                    if (event.getTimeChanged() > abTimeEnd) {
-//                               seekTo(abTimeStart);
+//                          seekTo(abTimeStart);
 //                    }
 //                }
                 break;
             case MediaPlayer.Event.PositionChanged://PositionChanged   0.061593015
-                // LogUtils.i(tag, "PositionChanged" + event.getPositionChanged());
+                 LogUtils.i(tag, "PositionChanged" + event.getPositionChanged());
                 break;
             case MediaPlayer.Event.Vout:
                 LogUtils.i(tag, "Vout" + event.getVoutCount());

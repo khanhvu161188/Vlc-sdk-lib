@@ -845,7 +845,8 @@ public class MediaPlayer extends VLCObject<MediaPlayer.Event> {
             case Event.TimeChanged:
                 return new Event(eventType, arg1);
             case Event.PositionChanged:
-                return new Event(eventType, arg2);
+//                return new Event(eventType, arg2);
+                return new Event(eventType, arg1);
             case Event.Vout:
                 mVoutCount = (int) arg1;
                 notify();

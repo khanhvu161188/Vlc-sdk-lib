@@ -97,7 +97,7 @@ public class MediaControl implements MediaController.MediaPlayerControl, MediaLi
 
     @Override
     public void eventBuffing(int event, float buffing) {
-
+        Log.i(tag, "buffering------event:"+event+",buffing:"+buffing);
     }
 
     @Override

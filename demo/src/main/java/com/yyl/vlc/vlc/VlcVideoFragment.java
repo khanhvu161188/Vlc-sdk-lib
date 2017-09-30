@@ -29,8 +29,7 @@ public class VlcVideoFragment extends Fragment implements View.OnClickListener {
     String tag = "VlcVideoFragment";
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_video, container, false);
         vlcVideoView = (VlcVideoView) view.findViewById(R.id.player);
         logInfo = (TextView) view.findViewById(R.id.info);
@@ -46,7 +45,7 @@ public class VlcVideoFragment extends Fragment implements View.OnClickListener {
                 Log.i(tag, "---------   start   ----------------");
                 vlcVideoView.startPlay(MainActivity.path);
             }
-        }, 1000);
+        }, 500);
 
         return view;
     }
@@ -62,14 +61,14 @@ public class VlcVideoFragment extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.change:
-                isFullscreen = !isFullscreen;
-                if (isFullscreen) {
-                    getActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-                    getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE);
-                } else {
+//                isFullscreen = !isFullscreen;
+//                if (isFullscreen) {
+//                    getActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+//                    getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE);
+//                } else {
                     getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
                     getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-                }
+//                }
                 break;
         }
     }
