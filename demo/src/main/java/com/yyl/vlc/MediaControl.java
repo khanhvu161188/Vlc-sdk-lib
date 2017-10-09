@@ -39,26 +39,31 @@ public class MediaControl implements MediaController.MediaPlayerControl, MediaLi
 
     @Override
     public void start() {
+        Log.i(tag, "开始播放");
         mediaPlayer.start();
     }
 
     @Override
     public void pause() {
+        Log.i(tag, "暂停播放");
         mediaPlayer.pause();
     }
 
     @Override
     public int getDuration() {
+        Log.i(tag, "获取总进度|："+(int) mediaPlayer.getDuration());
         return (int) mediaPlayer.getDuration();
     }
 
     @Override
     public int getCurrentPosition() {
+        Log.i(tag, "long获取进度："+(int)mediaPlayer.getCurrentPosition());
         return (int) mediaPlayer.getCurrentPosition();
     }
 
     @Override
     public void seekTo(int pos) {
+        Log.i(tag, "滑动进度："+pos);
         mediaPlayer.seekTo(pos);
     }
 
@@ -69,6 +74,7 @@ public class MediaControl implements MediaController.MediaPlayerControl, MediaLi
 
     @Override
     public int getBufferPercentage() {
+        Log.i(tag, "int当前进度百分比："+mediaPlayer.getBufferPercentage());
         return mediaPlayer.getBufferPercentage();
     }
 

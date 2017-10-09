@@ -75,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
 //                options.add("-vvv");
                 LibVLC libVLC = new LibVLC(context, options);
                 Media media = new Media(libVLC, Uri.parse(path));//网络截图效率不高
+
 //                media.addOption("--vout=android_display,none");
                 //   media.addOption("--no-audio");
 
@@ -88,19 +89,19 @@ public class MainActivity extends AppCompatActivity {
 
 //                   media.addOption("--start-time=0");
 //                  media.setHWDecoderEnabled(true, true);
-                media.parse(Media.Parse.ParseNetwork);
-                Log.i("yyl", "getTrackCount=" + media.getTrackCount());
-                Media.VideoTrack track = (Media.VideoTrack) media.getTrack(Media.Track.Type.Video);
-                Log.i("yyl", "track=" + track.toString());
-                final Bitmap bitmap = ThumbnailUtils.getThumbnail(media, track.width / 2, track.height / 2);
-                Log.i("yyl", "bitmap=" + bitmap);
-                thumbnail.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        if (bitmap != null)
-                            thumbnail.setImageBitmap(bitmap);
-                    }
-                });
+//                media.parse(Media.Parse.ParseNetwork);
+//                Log.i("yyl", "getTrackCount=" + media.getTrackCount());
+//                Media.VideoTrack track = (Media.VideoTrack) media.getTrack(Media.Track.Type.Video);
+//                Log.i("yyl", "track=" + track.toString());
+//                final Bitmap bitmap = ThumbnailUtils.getThumbnail(media, track.width / 2, track.height / 2);
+//                Log.i("yyl", "bitmap=" + bitmap);
+//                thumbnail.post(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        if (bitmap != null)
+//                            thumbnail.setImageBitmap(bitmap);
+//                    }
+//                });
 
             }
         }).start();
