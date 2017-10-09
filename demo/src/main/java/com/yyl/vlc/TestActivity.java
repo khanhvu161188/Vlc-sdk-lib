@@ -30,7 +30,7 @@ public class TestActivity extends AppCompatActivity {
         button = new Button(this);
         button.setText("000");
         button.setHeight(1080);
-        button.setWidth(720); 
+        button.setWidth(720);
         button.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
                if (mediaPlayer.isPlaying()){
